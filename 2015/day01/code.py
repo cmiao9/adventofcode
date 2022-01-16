@@ -60,5 +60,5 @@ if __name__ == "__main__":
     pt1_floor = solution.part1(instructions=instruction_data)
     print(f"Part 1: {pt1_floor}")
 
-    pt2_floor = solution.part2(instructions=instruction_data)
-    print(f"Part 2: {pt2_floor}")
+    pt2_position = solution.part2(instructions=instruction_data)
+    print(f"Part 2: {pt2_position}")
