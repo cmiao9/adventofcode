@@ -11,7 +11,7 @@ class Solution:
             path (str): Path to data.
 
         Returns:
-            list: todo
+            list: List of keys.
         """
         data = open(path, "r").read().split("\n")
         return data
