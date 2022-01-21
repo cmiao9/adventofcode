@@ -25,6 +25,8 @@ class Solution:
         Returns:
             dict: Dictionary containing wires and corresponding signals.
         """
+
+        # Loop over instructions list.
         wires_dict = {}
         while instructions:
             unused_instructions = []
