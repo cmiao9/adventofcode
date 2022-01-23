@@ -16,12 +16,13 @@ class Solution:
         data = open(path, "r").read().split("\n")
         return data
 
-    def part1(self, keys: list) -> list:
+    def part1(self, keys: list, prefix: str = "00000") -> list:
         """
         Gets smallest integer that when appended to end of key will yield an MD5 hash that starts with 5 zeros.
 
         Args:
             keys (list): List of secret key strings to use in hash.
+            prefix (string): Optional string prefix of hash.
 
         Returns:
             list: List of integer results by key.
@@ -29,7 +30,7 @@ class Solution:
         results = []
         for key in keys:
             i, md5_hash = 0, md5("sample".encode())
-            while md5_hash.hexdigest()[0:5] != "00000":
+            while md5_hash.hexdigest()[:len(prefix)] != prefix:
                 sample_string = key + str(i)
                 md5_hash = md5(sample_string.encode())
                 i += 1
@@ -46,15 +47,7 @@ class Solution:
         Returns:
             list: List of integer results by key.
         """
-        results = []
-        for key in keys:
-            i, md5_hash = 0, md5("sample".encode())
-            while md5_hash.hexdigest()[0:6] != "000000":
-                sample_string = key + str(i)
-                md5_hash = md5(sample_string.encode())
-                i += 1
-            results.append(i - 1)
-        return results
+        return self.part1(keys=keys, prefix="000000")
 
 
 if __name__ == "__main__":
