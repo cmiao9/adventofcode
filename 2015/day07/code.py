@@ -85,11 +85,8 @@ class Solution:
             int: Corrected signal between 0 and 65535.
 
         """
-        if x < 0:
-            return 65536 + x
-        if x > 65535:
-            return x - 65536
-        return x
+        return x % 65536
+
 
     def check_val(self, x: str, wires_dict: dict) -> int:
         """
