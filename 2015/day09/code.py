@@ -46,7 +46,7 @@ class Solution:
             distances[loc1][loc2] = dist
             distances[loc2][loc1] = dist
 
-        # Construct all possible routes and distances to find minimum.
+        # Construct all possible routes and distances.
         route_distances = []
         for route in permutations(unique_locations):
             distance = 0
@@ -55,6 +55,7 @@ class Solution:
                 distance += distances[loc1][loc2]
             route_distances.append(distance)
 
+        # Returns either minimum or maximum route distance.
         if min_max == "min":
             return min(route_distances)
         elif min_max == "max":
@@ -62,13 +63,13 @@ class Solution:
 
     def part2(self, locations: list) -> int:
         """
-        Calculates distance of shortest route that visits all locations in list.
+        Calculates distance of longest route that visits all locations in list.
 
         Args:
             locations (list): List of distances between locations.
 
         Returns:
-            int: Distance of shortest route that visits all locations.
+            int: Distance of longest route that visits all locations.
         """
         return self.part1(locations, "max")
 
