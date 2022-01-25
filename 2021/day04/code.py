@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> tuple:
         """
         Loads data from given file path.
@@ -101,7 +99,12 @@ class Solution:
 
         # Compute and return score if there is a bingo.
         if is_bingo:
-            sum_unmarked = sum([sum([num for num, marked in row.items() if not marked]) for row in board])
+            sum_unmarked = sum(
+                [
+                    sum([num for num, marked in row.items() if not marked])
+                    for row in board
+                ]
+            )
             return board, sum_unmarked * num
 
         # Return 0 as score if no bingo.

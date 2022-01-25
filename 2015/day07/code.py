@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -86,7 +84,6 @@ class Solution:
 
         """
         return x % 65536
-
 
     def check_val(self, x: str, wires_dict: dict) -> int:
         """

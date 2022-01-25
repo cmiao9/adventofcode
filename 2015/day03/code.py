@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -37,7 +35,6 @@ class Solution:
             results_list.append(num_houses)
         return results_list
 
-
     def part2(self, instructions: list) -> list:
         """
         Counts total unique houses Santa and Robo Santa visit.
@@ -51,7 +48,7 @@ class Solution:
         instructions_dict = {">": [1, 0], "<": [-1, 0], "^": [0, 1], "v": [0, -1]}
         results_list = []
         for instruction in instructions:
-            santa_s, robo_s = instruction[0::2],  instruction[1::2]
+            santa_s, robo_s = instruction[0::2], instruction[1::2]
             num_houses, unique_houses = 1, [[0, 0]]
             for s in [santa_s, robo_s]:
                 x, y = 0, 0

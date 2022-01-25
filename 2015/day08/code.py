@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -44,10 +42,10 @@ class Solution:
                 i = s.index("\\")
                 if s[i + 1] in ["\\", '"']:
                     num_subtract += 1
-                    s = s[0:i] + s[i+2:]
+                    s = s[0:i] + s[i + 2 :]
                 elif s[i + 1] == "x":
                     num_subtract += 3
-                    s = s[:i] + s[i+4:]
+                    s = s[:i] + s[i + 4 :]
 
             num_memory += s_len - num_subtract
 

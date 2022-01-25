@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -38,9 +36,9 @@ class Solution:
                     num_vowels += 1
 
                 if i < len(s) - 1:
-                    if s[i:i+2] in ["ab", "cd", "pq", "xy"]:
+                    if s[i : i + 2] in ["ab", "cd", "pq", "xy"]:
                         has_bad_str = True
-                    if s[i] == s[i+1]:
+                    if s[i] == s[i + 1]:
                         has_double_letter = True
 
             # Update nice string counter.
@@ -70,13 +68,13 @@ class Solution:
 
                 # Check for two letter pairs.
                 if i < len(s) - 1:
-                    if s[i:i+2] in letter_pairs[:-1]:
+                    if s[i : i + 2] in letter_pairs[:-1]:
                         has_2_letter_pairs = True
-                    letter_pairs.append(s[i:i+2])
+                    letter_pairs.append(s[i : i + 2])
 
                 # Check for repeat letters.
                 if i < len(s) - 2:
-                    if s[i] == s[i+2]:
+                    if s[i] == s[i + 2]:
                         has_repeat_letter = True
 
             # Update nice string counter.

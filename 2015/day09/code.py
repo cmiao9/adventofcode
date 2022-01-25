@@ -1,8 +1,7 @@
-
 from itertools import permutations
 
-class Solution:
 
+class Solution:
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -51,7 +50,7 @@ class Solution:
         for route in permutations(unique_locations):
             distance = 0
             for i in range(len(route) - 1):
-                loc1, loc2 = route[i], route[i+1]
+                loc1, loc2 = route[i], route[i + 1]
                 distance += distances[loc1][loc2]
             route_distances.append(distance)
 

@@ -1,4 +1,3 @@
-
 data = open("input.txt", "r").read().split("\n")
 data = [x.split(" ") for x in data]
 data = [(direction, int(magnitude)) for (direction, magnitude) in data]

@@ -2,7 +2,6 @@ from hashlib import md5
 
 
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
@@ -30,7 +29,7 @@ class Solution:
         results = []
         for key in keys:
             i, md5_hash = 0, md5("sample".encode())
-            while md5_hash.hexdigest()[:len(prefix)] != prefix:
+            while md5_hash.hexdigest()[: len(prefix)] != prefix:
                 sample_string = key + str(i)
                 md5_hash = md5(sample_string.encode())
                 i += 1

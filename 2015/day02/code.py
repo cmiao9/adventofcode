@@ -1,6 +1,4 @@
-
 class Solution:
-
     def load_data(self, path: str) -> list:
         """
         Loads data from given file path.
