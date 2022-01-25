@@ -23,16 +23,30 @@ class Solution:
         Returns:
             str: Length of final look and say sequence.
         """
+
+        # Loop over iterations.
         for i in range(iterations):
+
+            # Loop over digits in sequence.
             new_seq, run = "", ""
             for c in sequence:
+
+                # Add digit to run if part of current run.
                 if not run or c == run[0]:
                     run += c
+
+                # Otherwise, update the new sequence and reset the current run.
                 else:
                     new_seq += str(len(run)) + run[0]
                     run = c
+
+            # Final update of new sequence.
             new_seq += str(len(run)) + run[0]
+
+            # Use new sequence as starting sequence for next iteration.
             sequence = new_seq
+
+        # Return length of final sequence.
         return len(new_seq)
 
     def part2(self, sequence: str) -> str:
