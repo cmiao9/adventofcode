@@ -44,11 +44,11 @@ class Solution:
             int: Updated sum.
         """
         if isinstance(json_element, int):
-            return sum_json + json_element
-        if isinstance(json_element, list):
+            sum_json += json_element
+        elif isinstance(json_element, list):
             for element in json_element:
                 sum_json = self.accumulate_sum(element, sum_json, ignore_word)
-        if isinstance(json_element, dict):
+        elif isinstance(json_element, dict):
             dict_elements = list(json_element.keys()) + list(json_element.values())
             if not ignore_word or ignore_word not in dict_elements:
                 for key in json_element:
