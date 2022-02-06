@@ -1,0 +1,3 @@
+Spells:     Cost  Damage  Armor  Heal  Effect  Mana
+
+Recharge     229       0      0     0       5   101
