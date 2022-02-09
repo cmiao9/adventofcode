@@ -36,6 +36,7 @@ class Solution:
         for row in input_data:
             boss[row.split(":")[0].lower()] = int(row.split(":")[1])
         self.boss = boss
+
         self.player = {"hit points": 50, "mana": 500, "damage": 0, "armor": 0}
 
         self.test_path = test_path
@@ -89,7 +90,6 @@ class Solution:
 
         Returns:
             tuple: Tuple containing winning minimized player and boss state history, spell history, and mana cost.
-
         """
 
         new_player_state_history = self.copy(player_state_history)
@@ -218,7 +218,6 @@ class Solution:
         Returns:
             dict: Updated player state.
         """
-
         spell_stats = self.shop["spells"][spell]
         new_player_state = {
             "hit points": player_state["hit points"] + spell_stats["heal"],
@@ -277,7 +276,6 @@ class Solution:
         Returns:
             tuple: Updated player state, boss state, and effects.
         """
-
         new_player_state = self.copy(player_state)
         new_boss_state = self.copy(boss_state)
         new_effects = {}
