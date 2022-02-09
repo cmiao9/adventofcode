@@ -1,3 +1,6 @@
+from itertools import count
+
+
 class Solution:
     def __init__(self, test_path: str, input_path: str) -> None:
         """
@@ -21,7 +24,25 @@ class Solution:
 
     def part1(self) -> int:
         """Calculates code to give weather machine."""
-        return 0
+
+        # Loop over grid in specified order.
+        x, y, i = 1, 1, 1
+        code = self.grid[0][0]
+        for _ in count():
+            if y == i:
+                i += 1
+                x = i
+                y = 1
+            else:
+                x -= 1
+                y += 1
+
+            # Calculate code and stop if at solution coordinate.
+            code = code * 252533 % 33554393
+            if [x, y] == self.solution_coordinate:
+                break
+
+        return code
 
     def part2(self) -> None:
         """todo"""
