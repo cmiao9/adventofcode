@@ -31,7 +31,7 @@ class Solution:
             include_diagonal (bool): Whether to include diagonal lines.
 
         Returns:
-            int: Number of points where at least 2 horizontal or vertical lines intersect.
+            int: Number of points where at least 2 lines intersect.
         """
 
         # Loop over all lines, considering only vertical and horizontal ones.
