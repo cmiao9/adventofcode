@@ -13,7 +13,7 @@ class Solution:
         data = [[int(y) for y in x] for x in data]
         self.data = data
 
-        # Create grid tracking how line intersections.
+        # Create grid tracking line intersections.
         max_coordinate = max([max(x) for x in data]) + 1
         self.grid = []
         for x in range(max_coordinate):
