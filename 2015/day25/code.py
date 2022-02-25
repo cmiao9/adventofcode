@@ -45,7 +45,7 @@ class Solution:
         return code
 
     def part2(self) -> None:
-        """todo"""
+        """Not applicable!"""
         return
 
 
